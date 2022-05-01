@@ -12,11 +12,20 @@ public class Main {
         System.out.println();
 
         Author secondAuthor = new Author("Lev", "Tolstoi");
-        System.out.println("Avtor knigi - " + secondAuthor.getAuthorFullName());
+        System.out.println("Avtor knigi - " + secondAuthor.getAuthorName() + " " + secondAuthor.getAuthorSurname());
         Book secondBook = new Book("Voina i mir", secondAuthor, 1867);
         System.out.println("Vpervye izdana - " + secondBook.getBookYear());
         secondBook.setBookYear(2009);
         System.out.println("Poslednyi god pereizdaniya - " + secondBook.getBookYear());
+        System.out.println();
+        System.out.println("Domashnyaya rabota 10");
+        System.out.println();
+        System.out.println(secondAuthor);
+        System.out.println(secondBook);
+        System.out.println();
+        System.out.println(firstBook.equals(secondBook));
+        System.out.println(firstAuthor.equals(secondAuthor));
+
 
     }
 

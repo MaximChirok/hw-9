@@ -1,5 +1,7 @@
 package ru.skypro;
 
+import java.util.Objects;
+
 public class Author {
     public String authorName;
     public String authorSurname;
@@ -21,4 +23,22 @@ public class Author {
     public String getAuthorSurname() {
         return authorSurname;
     }
+
+    public String toString() {
+        return "Avtora zvali " + authorName;
+    }
+
+
+    public int hashCode() {
+        return Objects.hash(authorSurname);
+    }
+
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+        Author firstAuthor = (Author) other;
+        return authorSurname.equals(firstAuthor.authorSurname);
+    }
+
 }
