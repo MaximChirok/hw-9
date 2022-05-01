@@ -25,7 +25,7 @@ public class Author {
     }
 
     public String toString() {
-        return "Avtora zvali " + authorName;
+        return "Avtora zvali " + authorName + " " + authorSurname;
     }
 
 
@@ -38,7 +38,7 @@ public class Author {
             return false;
         }
         Author firstAuthor = (Author) other;
-        return authorSurname.equals(firstAuthor.authorSurname);
+        return authorSurname.equals(firstAuthor.authorSurname) && authorName.equals(firstAuthor.authorName);
     }
 
 }

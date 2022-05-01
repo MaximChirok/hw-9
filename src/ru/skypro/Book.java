@@ -30,11 +30,7 @@ public  String getBookName() {
     }
 
     public String toString() {
-    return authorFullName + " napisal roman " + "'"+this.bookName+"'" + " v " + bookYear + " godu";
-    }
-
-    public int hashCode() {
-        return Objects.hash(bookName);
+    return authorFullName.authorName +" "+ authorFullName.authorSurname + " napisal roman " + "'"+this.bookName+"'" + " v " + bookYear + " godu";
     }
 
     @Override
@@ -42,6 +38,11 @@ public  String getBookName() {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(bookName, book.bookName);
+        return bookYear == book.bookYear && Objects.equals(bookName, book.bookName) && Objects.equals(authorFullName, book.authorFullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookName, authorFullName, bookYear);
     }
 }
